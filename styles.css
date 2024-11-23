@@ -8,11 +8,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    height: 100vh;
     text-align: center;
     color: white;
     overflow: hidden;
-    padding: 0 10px;
 }
 
 /* Container principal */
@@ -20,13 +19,13 @@ body {
     width: 100%;
     max-width: 800px;
     padding: 20px;
-    box-sizing: border-box;
+    margin: 0 auto;
 }
 
 /* Título */
 h1 {
-    font-size: 5vw; /* Aumentando o tamanho para que o título fique maior */
-    margin-bottom: 20px;
+    font-size: 3rem;
+    margin-bottom: 30px;
     color: #000000;
     font-style: italic;
 }
@@ -34,9 +33,8 @@ h1 {
 /* Envelope */
 .envelope {
     position: relative;
-    width: 90%; /* Agora o envelope ocupa 90% da tela */
-    max-width: 450px;
-    height: auto;
+    width: 80%;
+    max-width: 700px;
     margin: 0 auto;
     background-color: #ffffff;
     border: 2px solid #ddd;
@@ -64,24 +62,24 @@ h1 {
 /* Carta */
 .card {
     position: absolute;
-    top: 15%; /* Ajustando a posição para não ficar tão no topo */
+    top: 30px;
     left: 50%;
     transform: translateX(-50%);
-    width: 90%;
-    max-width: 380px; /* Reduzindo um pouco o tamanho */
-    min-height: 350px; /* Garantindo altura mínima */
+    width: 80%;
+    max-width: 600px;
     padding: 20px;
     background-color: #fff;
     border: 2px solid #ddd;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     animation: slideUp 2s ease forwards;
-    overflow-y: auto;
+    max-height: 300px;  /* Max height da carta */
+    overflow-y: auto;   /* Rolagem vertical se necessário */
 }
 
 /* Texto da carta */
 .card p {
     margin: 0;
-    font-size: 1.2rem; /* Aumentando o tamanho do texto */
+    font-size: 1.2rem;   /* Aumentando o tamanho do texto */
     line-height: 1.6;
     color: #333;
     text-align: justify;
@@ -90,10 +88,10 @@ h1 {
 /* Animação para a carta sair do envelope */
 @keyframes slideUp {
     0% {
-        transform: translate(-50%, 200px); /* A carta começa fora da tela */
+        transform: translate(-50%, 200px);
     }
     100% {
-        transform: translate(-50%, 0); /* A carta se move para a posição final */
+        transform: translate(-50%, 0);
     }
 }
 
@@ -111,155 +109,12 @@ h1 {
     background: #f1f1f1;
 }
 
-/* Responsividade para telas menores */
-@media (max-width: 768px) {
-    body {
-        min-height: auto;
-        padding: 20px;
-    }
-    .envelope {
-        max-width: 350px;
+/* Responsividade - Ajuste para dispositivos móveis */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
     }
     .card {
-        min-height: 400px;
-        font-size: 1.5rem; /* Ajustando o tamanho do texto em telas menores */
-    }
-    h1 {
-        font-size: 7vw; /* Título maior em telas menores */
+        width: 90%; /* Garantir que a carta ocupe mais espaço na tela */
     }
 }
-
-/* Responsividade extra para telas muito pequenas */
-@media (max-width: 480px) {
-    .card {
-        min-height: 450px;
-        font-size: 1.6rem; /* Texto ainda maior em telas pequenas */
-    }
-    h1 {
-        font-size: 8vw;
-    }
-}
-
-/* From Uiverse.io by hokageDSL */ 
-.rating > label {
-    margin-right: 3px;
-  }
-  
-  .rating:not(:checked) > input {
-    display: none;
-  }
-  
-  .rating:not(:checked) > label {
-    float: right;
-    cursor: pointer;
-    font-size: 24px;
-  }
-  
-  .rating:not(:checked) > label > svg {
-    fill: #666;
-    transition:
-      fill 0.3s ease,
-      transform 0.3s ease;
-  }
-  
-  .rating > input:checked ~ label > svg {
-    fill: #ff0000;
-    transform: scale(1.1);
-  }
-  
-  .rating:not(:checked) > label:hover ~ label > svg,
-  .rating:not(:checked) > label:hover > svg {
-    fill: #ff1a1a;
-    transform: scale(1.05);
-  }
-  
-  #heart1:checked ~ label > svg {
-    fill: #ff0000;
-  }
-  
-  #heart2:checked ~ label > svg {
-    fill: #ff4d00;
-  }
-  
-  #heart3:checked ~ label > svg {
-    fill: #ff9900;
-  }
-  
-  #heart4:checked ~ label > svg {
-    fill: #ccff00;
-  }
-  
-  #heart5:checked ~ label > svg {
-    fill: #66ff00;
-  }
-  
-  #heart6:checked ~ label > svg {
-    fill: #00ff4d;
-  }
-  
-  #heart7:checked ~ label > svg {
-    fill: #00ff99;
-  }
-  
-  #heart8:checked ~ label > svg {
-    fill: #00ccff;
-  }
-  
-  #heart9:checked ~ label > svg {
-    fill: #0059ff;
-  }
-  
-  #heart10:checked ~ label > svg {
-    fill: #9900ff;
-  }
-  
-  #heart1:hover ~ label > svg,
-  #heart1:hover > svg {
-    fill: #e60000 !important;
-  }
-  
-  #heart2:hover ~ label > svg,
-  #heart2:hover > svg {
-    fill: #ff0000 !important;
-  }
-  
-  #heart3:hover ~ label > svg,
-  #heart3:hover > svg {
-    fill: #ff0000 !important;
-  }
-  
-  #heart4:hover ~ label > svg,
-  #heart4:hover > svg {
-    fill: #ff0000 !important;
-  }
-  
-  #heart5:hover ~ label > svg,
-  #heart5:hover > svg {
-    fill: #ff0000 !important;
-  }
-  
-  #heart6:hover ~ label > svg,
-  #heart6:hover > svg {
-    fill: #ff0000 !important;
-  }
-  
-  #heart7:hover ~ label > svg,
-  #heart7:hover > svg {
-    fill: #ff0000 !important;
-  }
-  
-  #heart8:hover ~ label > svg,
-  #heart8:hover > svg {
-    fill: #ff0000 !important;
-  }
-  
-  #heart9:hover ~ label > svg,
-  #heart9:hover > svg {
-    fill: #ff0000 !important;
-  }
-  
-  #heart10:hover ~ label > svg,
-  #heart10:hover > svg {
-    fill: #ff0000 !important;
-  }
-  
